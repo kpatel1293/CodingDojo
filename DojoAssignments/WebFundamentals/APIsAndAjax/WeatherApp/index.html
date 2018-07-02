@@ -1,0 +1,49 @@
+<!-- http://api.openweathermap.org/data/2.5/forecast/daily?id=524901&APPID={INSERTAPIKEY}
+// Make sure to put your unique API key in the URL (taking out the brackets).
+// &APPID={INSERTAPIKEY} will need to be at the end of each URL you access below and in the assignment. 
+8b277e374b6ec8c2f73c4d6205250a59 <- key -->
+
+<!-- http://api.openweathermap.org/data/2.5/weather?q=London,uk&&appid= -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Weather App</title>
+        <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+        <script>
+            $(document).ready(function() {
+                $('form').submit(function() {
+                    // your code here (build up your url)
+                    var city = $('#city').val();
+                    console.log(city);
+                    var url = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&&appid=8b277e374b6ec8c2f73c4d6205250a59";
+
+                    $.get(url, function(res) {
+                        // your code here
+                        var str = '';
+                        
+                        str += "<h1>" + city + "</h1>";
+                        var temp = res.main.temp * (9/5) - 459.67;
+                        str += "<p> Temperature: " + temp.toFixed(2) + " </p>"; 
+
+                        $('div').html(str);
+
+                        console.log(res);
+                    }, 'json');
+                    // don't forget to return false so the page doesn't refresh
+                    return false;
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <form method="POST">
+            <input type="text" name="city" id="city">
+            <input type="submit" value="Search Weather">
+        </form>
+        <div></div>
+    </body>
+</html>

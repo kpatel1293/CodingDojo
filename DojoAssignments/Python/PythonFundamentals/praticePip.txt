@@ -1,0 +1,24 @@
+pip install Django==1.11.9
+	This command is used to install Django that is 1.11.9 version specifically.
+
+pip list
+	This will list out all the available libraries than can be installed through pip.
+
+pip install Django==1.11.9 (We know you already ran this one. What information do you see returned in terminal after this command?)
+	It will print out a message saying requirement already satisfied.
+
+
+pip freeze (What's the difference between freeze and list?)
+	Freeze will list out all the latest versions including those that aren’t stable.
+
+First cd into your Desktop directory (cd ~/Desktop), then run this command: pip freeze > requirements.txt. What do you see when you ls? What's inside this file?
+	It lists out the output of all the pip freeze in the txt file.
+
+pip uninstall Django
+	Unstalls Django off the computer
+
+pip show Django
+	Displays the location of the file with other related information
+
+pip search Flask. This one might take a moment to execute.
+	Shows all the library that contains word Flask.

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>jQuery Functions</title>
+        <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+        <script>
+            $('document').ready(function() {
+                // .addClass
+                $('.a b').addClass('addClass');
+                // .after
+                $('.a p').after('<p>I was added after the .addClass!</p>');
+                // .append
+                $('.a p').last().append('<strong> Just like this</strong>');
+                // .attr
+                // .before
+                // .click
+                // .fadeIn
+                // .fadeOut
+                // .hide
+                // .html
+                // .show
+                // .slideDown
+                // .slideUp
+                // .slideToggle
+                // .text
+                // .toggle
+                // .val
+            })
+        </script>
+        <style>
+            .box { border: 1px blue solid; width: 300px; height: 150px; display: inline-block; vertical-align: top; padding: 10px; margin-bottom: 10px;}
+
+            .addClass { color: blue; }
+        </style>
+    </head>
+    <body>
+        <!-- <div class="row"> -->
+            <div class="box a">
+                <p>The appended class turns the text <b>blue</b>!</p>
+                <p>After I can add with the .append: </p>
+            </div>
+            <div class="box b"></div>
+            <!--<div class="box c"></div>
+            <div class="box d"></div>
+        </div>
+        <div class="row">
+            <div class="box e"></div>
+            <div class="box f"></div>
+            <div class="box g"></div>
+            <div class="box h"></div> -->
+        </div>
+    </body>
+</html>

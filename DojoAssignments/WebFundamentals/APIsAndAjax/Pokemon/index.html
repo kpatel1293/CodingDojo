@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pokemon</title>
+        <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+        <script>
+            $(document).ready(function() {
+                for(var i = 1; i < 151; i++)
+                {
+                    $('.pokemon').append('<img id="' + i + '" src="http://pokeapi.co/media/img/' + i + '.png"/>');
+                }
+
+                $('img').click(function() {
+                    console.log($(this).attr('id'));
+                    $.get("https://pokeapi.co/api/v2/pokemon/" + $(this).attr('id') + "/", function(res) {
+                        var str = "";
+                        str += "<h1>"+ res.name + "</h1>";
+                        str += "<h4>Types</h4>";
+                        str += "<ul>"; 
+                        for(var i = 0; i < res.types.length; i++) {
+                            str += "<li>" + res.types[i].type.name + "</li>";
+                        }
+                        str += "</ul>";
+                        str += "<h4>Height</h4>";
+                        str += "<p>" + res.height + "</p>";
+                        str += "<h4>Weight</h4>";
+                        str += "<p>" + res.weight + "</p>";
+                        $(".redbox").html(str);
+                        
+                        console.log(res);
+                        console.log(typeof res.types);
+                        for(var j = 0; j < res.types.length; j++) 
+                        {
+                            console.log(res.types[j].type.name);
+                        }
+                    }, "json");
+                })
+            })
+        </script>
+        <style>
+            img 
+            { 
+                width: 100px;
+                height: 100px;
+                margin: 5px;
+            }
+            .pokemon
+            {
+                width: 1000px;
+                display: inline-block;
+            }
+            .redbox
+            {
+                border: red 10px solid;
+                height: 400px;
+                width: 300px;
+                display: inline-block;
+                vertical-align: top;
+                margin-left: 40px;
+                padding-left:20px; 
+            }
+        </style>
+    </head>
+    <body>
+        <div class="pokemon"></div>
+        <div class="redbox"></div>
+    </body>
+</html>

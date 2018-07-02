@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Disappearing Ninja</title>
+        <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+
+        <script>
+            $(document).ready(function() {
+                $( ".ninja" ).click(function() {
+                    $( this ).hide(function() {
+                        $( this ).remove();
+                    });
+                });
+
+                $('button').click(function() {
+                    location.reload();
+                })
+            })
+        </script>
+
+        <style>
+            .ninja
+            {
+                display: inline-block;
+                vertical-align: top;
+                background-image: url('smLogo.png');
+                height: 200px;
+                width: 200px;
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+                border: 2px black solid;
+                margin-bottom: 5px;
+            }
+            
+            button
+            {
+                border: 2px black solid;
+                color: white;
+                background-color: green;
+                width: 100px;
+                height: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>jQuery - assignment 1</h1>
+        <div class="row">
+            <div class="ninja"></div>
+            <div class="ninja"></div>
+            <div class="ninja"></div>
+            <div class="ninja"></div>
+            <div class="ninja"></div>
+            <div class="ninja"></div>
+            <div class="ninja"></div>
+            <div class="ninja"></div>
+        </div>
+        <div class="row">
+            <button>Restore</button>
+        </div>
+    </body>
+</html>

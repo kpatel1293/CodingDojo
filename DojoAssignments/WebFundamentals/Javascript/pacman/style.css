@@ -1,0 +1,43 @@
+body
+{
+    background-color: black;
+    margin: 0px;
+}
+
+div.row div
+{
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}   
+
+div.brick
+{
+    background-color: blue;
+}
+
+div.coin
+{
+    background-image: url('f0135dd9a26bfb2e308961ba88d72eef96219fb7_00.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+div#pacman
+{
+    background-image: url('giphy.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+}
+
+div.empty {}
+
+div#world
+{
+    position: relative;
+}
